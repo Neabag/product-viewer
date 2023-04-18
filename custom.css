@@ -1,0 +1,20 @@
+#product-viewer {
+    width: 500px;
+    height: 700px;
+    position: relative;
+    overflow: hidden;
+}
+  
+#product-viewer img {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    width: 100%;
+    pointer-events: none;
+}
+  
+#product-viewer img:first-child {
+    display: block;
+}  
