@@ -16,11 +16,11 @@ images[0].style.display = "block";
 
 // add event listeners
 productViewer.addEventListener("mousedown", startDragging);
-// productViewer.addEventListener("touchstart", startDragging);
+productViewer.addEventListener("touchstart", startDragging);
 productViewer.addEventListener("mousemove", drag);
-// productViewer.addEventListener("touchmove", drag);
+productViewer.addEventListener("touchmove", drag);
 productViewer.addEventListener("mouseup", stopDragging);
-// productViewer.addEventListener("touchend", stopDragging);
+productViewer.addEventListener("touchend", stopDragging);
 productViewer.addEventListener("mouseleave", stopDragging);
 
 // start dragging the image
@@ -28,10 +28,9 @@ function startDragging(event) {
   console.log("dragStart");
   if (event.type === "mousedown") {
     dragStartX = event.clientX;
-  } 
-  // else if (event.type === "touchstart") {
-  //   dragStartX = event.touches[0].clientX;
-  // }
+  } else if (event.type === "touchstart") {
+    dragStartX = event.touches[0].clientX;
+  }
   isDragging = true;
 }
 
@@ -43,10 +42,9 @@ function drag(event) {
     var currentX = 0;
     if (event.type === "mousemove") {
       currentX = event.clientX;
-    } 
-    // else if (event.type === "touchmove") {
-    //   currentX = event.touches[0].clientX;
-    // }
+    } else if (event.type === "touchmove") {
+      currentX = event.touches[0].clientX;
+    }
     var deltaX = currentX - dragStartX;
     currentAngle = startAngle - (deltaX / productViewer.offsetWidth * 360);
     updateImage();
