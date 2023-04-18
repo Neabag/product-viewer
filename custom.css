@@ -1,6 +1,6 @@
 #product-viewer {
-    width: 500px;
-    height: 700px;
+    width: 60vw;
+    height: 70vh;
     position: relative;
     overflow: hidden;
 }
@@ -13,6 +13,7 @@
     object-fit: cover;
     width: 100%;
     pointer-events: none;
+    overflow: hidden;
 }
   
 #product-viewer img:first-child {
